@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.ContInt" parent="Theme.AppCompat.Light">
+        <item name="android:windowBackground">@color/back</item>
+        <item name="android:textColor">#000</item>
+
+        <item name="android:actionBarStyle">@style/Contint_ActionBar</item>
+
+        <item name="android:buttonStyle">@style/button</item>
+
+        <item name="android:logo">@mipmap/ic_launcher</item>
+        <item name="android:windowActionBar">true</item>
+        <item name="android:icon">@mipmap/ic_launcher</item>
+    </style>
+    <style name="button" parent="android:Widget.ActionButton">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:maxHeight">15dp</item>
+        <item name="android:minHeight">8dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+    </style>
+    <style name="Contint_ActionBar" parent="android:Widget.ActionBar">
+        <item name="android:background">@color/std_color</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+</resources>

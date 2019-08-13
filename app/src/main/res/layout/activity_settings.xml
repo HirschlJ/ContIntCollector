@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="at.ac.univie.jakobhirschl.contintcollector.settings.SettingsActivity"
+    android:clickable="true"
+    android:onClick="keyboardAway">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sensors to use"
+                android:id="@+id/textView"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use GPS"
+                android:id="@+id/useGPS"
+                android:onClick="setUseGPS"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp" />
+
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:text="\?"
+                android:padding="0dp"
+                android:id="@+id/button5"
+                android:layout_toRightOf="@id/useGPS"
+                android:layout_marginLeft="5dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="27dp"
+                android:onClick="gpsHelp"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Measure Touch Interaction"
+                android:id="@+id/useInteraction"
+                android:onClick="setUseInteraction"
+                android:layout_below="@+id/useGPS"
+                android:layout_centerHorizontal="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Measure Noise"
+                android:id="@+id/useNoise"
+                android:onClick="setUseNoise"
+                android:layout_below="@+id/useInteraction"
+                android:layout_centerHorizontal="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Measure Light Intensity"
+                android:id="@+id/useLight"
+                android:onClick="setUseLight"
+                android:layout_below="@+id/useNoise"
+                android:layout_centerHorizontal="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Detect close Bluetooth devices"
+                android:onClick="setUseBluetooth"
+                android:id="@+id/useBluetooth"
+                android:layout_below="@+id/useLight"
+                android:layout_centerHorizontal="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use Accelerometer"
+                android:id="@+id/useAcc"
+                android:onClick="setUseAcc"
+                android:layout_below="@+id/useBluetooth"
+                android:layout_centerHorizontal="true" />
+
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:text="\?"
+                android:padding="0dp"
+                android:id="@+id/button4"
+                android:layout_toRightOf="@id/useAcc"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@id/useBluetooth"
+                android:onClick="accHelp"/>
+
+            <TextView
+                android:id="@+id/centerPoint3"
+                android:text=""
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/useAcc" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Measurment interval:"
+                android:id="@+id/textView6"
+                android:layout_marginTop="25dp"
+                android:layout_below="@+id/useAcc"
+                android:layout_toLeftOf="@id/centerPoint3"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:gravity="right"
+                android:ems="7"
+                android:id="@+id/interval"
+                android:layout_below="@+id/useAcc"
+                android:layout_marginTop="10dp"
+                android:text="1"
+                android:layout_toRightOf="@id/centerPoint3"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Decibel calibration"
+                android:id="@+id/textView2"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/interval"
+                android:layout_centerHorizontal="true" />
+
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:text="\?"
+                android:padding="0dp"
+                android:id="@+id/button3"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/textView2"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@id/interval"
+                android:onClick="calibrationHelp"/>
+
+            <TextView
+                android:id="@+id/centerPoint"
+                android:text=""
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/textView2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reference Amplitude:"
+                android:id="@+id/textView3"
+                android:layout_marginTop="25dp"
+                android:layout_below="@+id/textView2"
+                android:layout_toLeftOf="@id/centerPoint"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:gravity="right"
+                android:ems="7"
+                android:id="@+id/referenceAmpl"
+                android:layout_below="@+id/textView2"
+                android:layout_marginTop="10dp"
+                android:text="1"
+                android:layout_toRightOf="@id/centerPoint"/>
+
+            <TextView
+                android:id="@+id/centerPoint2"
+                android:text=""
+                android:maxLength="10"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/referenceAmpl" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:clickable="false"
+                android:editable="false"
+                android:gravity="right"
+                android:ems="7"
+                android:id="@+id/testValues"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/referenceAmpl"
+                android:layout_toLeftOf="@id/centerPoint2"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/testButton"
+                android:layout_below="@+id/referenceAmpl"
+                android:layout_marginTop="10dp"
+                android:text="Test calibration"
+                android:onClick="testButton"
+                android:layout_toRightOf="@id/centerPoint2"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Visialisation Options"
+                android:id="@+id/textView4"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/testButton"
+                android:layout_centerHorizontal="true" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Smooth data"
+                android:id="@+id/smoothData"
+                android:onClick="setSmooth"
+                android:layout_below="@+id/textView4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+            android:id="@+id/centerPoint4"
+            android:text=""
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/smoothData" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Map colour interpolation:"
+                android:id="@+id/textView9"
+                android:layout_marginTop="25dp"
+                android:layout_below="@+id/smoothData"
+                android:layout_toLeftOf="@id/centerPoint4"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:gravity="right"
+                android:ems="7"
+                android:id="@+id/interpolation"
+                android:layout_below="@+id/smoothData"
+                android:layout_marginTop="10dp"
+                android:text="1"
+                android:layout_toRightOf="@id/centerPoint3"/>
+
+            <TextView
+                android:id="@+id/centerPoint5"
+                android:text=""
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/interpolation" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Minimal Long/Lat diff:"
+                android:id="@+id/textView10"
+                android:layout_marginTop="25dp"
+                android:layout_below="@+id/interpolation"
+                android:layout_toLeftOf="@id/centerPoint4"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:gravity="right"
+                android:ems="7"
+                android:id="@+id/minLonLat"
+                android:layout_below="@+id/interpolation"
+                android:layout_marginTop="10dp"
+                android:text="1"
+                android:layout_toRightOf="@id/centerPoint4"/>
+
+            <Button
+                android:layout_width="30dp"
+                android:layout_height="35dp"
+                android:text="\?"
+                android:padding="0dp"
+                android:id="@+id/button6"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/minLonLat"
+                android:layout_marginLeft="5dp"
+                android:layout_below="@id/interpolation"
+                android:onClick="minLonLatHelp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reset Database"
+                android:id="@+id/textView5"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/minLonLat"
+                android:layout_centerHorizontal="true" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Reset Database"
+                android:id="@+id/resetButton"
+                android:layout_marginTop="10dp"
+                android:clickable="true"
+                android:layout_centerHorizontal="true"
+                android:onClick="resetDatabase"
+                android:layout_below="@+id/textView5"
+                android:layout_alignEnd="@+id/useNoise" />
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
